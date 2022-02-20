@@ -143,9 +143,9 @@ void ED_Free(IRehldsHook_ED_Free* chain, edict_t *entity)
 
 int SV_CheckUserInfo(IRehldsHook_SV_CheckUserInfo *chain, netadr_t *adr, char *userinfo, qboolean bIsReconnecting, int iReconnectSlot, char *name)
 {
-	auto original = [chain](netadr_t *_adr, char *_userinfo, bool _bIsReconnecting, int _iReconnectSlot, char *_name)
+	auto original = [chain](struct netadr_s *_adr, char *_userinfo, bool _bIsReconnecting, int _iReconnectSlot, char *_name)
 	{
-		return chain->callNext(adr, _userinfo, _bIsReconnecting, _iReconnectSlot, _name);
+		return chain->callNext(_adr, _userinfo, _bIsReconnecting, _iReconnectSlot, _name);
 	};
 
 	return callForward<int>(RH_SV_CheckUserInfo, original, adr, userinfo, bIsReconnecting, iReconnectSlot, name);
