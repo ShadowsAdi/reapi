@@ -73,9 +73,9 @@ void Con_Printf(IRehldsHook_Con_Printf *chain, const char *string)
 	callVoidForward(RH_Con_Printf, original, string);
 }
 
-int PF_precache_generic_I(IRehldsHook_PF_precache_generic_I *chain, char *s)
+int PF_precache_generic_I(IRehldsHook_PF_precache_generic_I *chain, const char *s)
 {
-	auto original = [chain](char *_s)
+	auto original = [chain](const char *_s)
 	{
 		return chain->callNext(_s);
 	};
