@@ -34,18 +34,6 @@
 
 #define MAX_RANDOM_RANGE 0x7FFFFFFFUL
 
-// Ambient sound flags
-enum
-{
-	AMBIENT_SOUND_STATIC		= 0,	// medium radius attenuation
-	AMBIENT_SOUND_EVERYWHERE	= BIT(0),
-	AMBIENT_SOUND_SMALLRADIUS	= BIT(1),
-	AMBIENT_SOUND_MEDIUMRADIUS	= BIT(2),
-	AMBIENT_SOUND_LARGERADIUS	= BIT(3),
-	AMBIENT_SOUND_START_SILENT	= BIT(4),
-	AMBIENT_SOUND_NOT_LOOPING	= BIT(5)
-};
-
 extern unsigned char gMsgData[512];
 extern sizebuf_t gMsgBuffer;
 extern edict_t *gMsgEntity;
@@ -61,12 +49,6 @@ extern int c_invis;
 extern int c_notvis;
 extern vec3_t vec_origin;
 extern int r_visframecount;
-
-enum
-{
-	GROUP_OP_AND = 0,
-	GROUP_OP_NAND
-};
 
 void PF_makevectors_I(const float *rgflVector);
 float PF_Time(void);
