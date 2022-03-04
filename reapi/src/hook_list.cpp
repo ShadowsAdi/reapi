@@ -94,6 +94,7 @@ hook_t hooklist_engine[] = {
 	ENG(ED_Alloc),
 	ENG(ED_Free),
 	ENG(Con_Printf),
+	ENG(SV_CheckUserInfo),
 	ENG(PF_precache_generic_I)
 };
 
