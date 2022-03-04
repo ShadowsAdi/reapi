@@ -107,7 +107,6 @@ void EV_Playback(int flags, const edict_t *pInvoker, unsigned short eventindex, 
 void EV_SV_Playback(int flags, int clientindex, unsigned short eventindex, float delay, float *origin, float *angles, float fparam1, float fparam2, int iparam1, int iparam2, int bparam1, int bparam2);
 int PF_precache_model_I(const char *s);
 int PF_precache_generic_I(const char *s);
-int PF_precache_generic_I_internal(const char *s);
 int PF_IsMapValid_I(const char *mapname);
 int PF_NumberOfEntities_I(void);
 char *PF_GetInfoKeyBuffer_I(edict_t *e);
@@ -173,3 +172,5 @@ void QueryClientCvarValue(const edict_t *player, const char *cvarName);
 void QueryClientCvarValue2(const edict_t *player, const char *cvarName, int requestID);
 int hudCheckParm(char *parm, char **ppnext);
 int EngCheckParm(const char *pchCmdLineToken, char **pchNextVal);
+
+#define RH_Precache_Generic PF_precache_generic_I
