@@ -34,6 +34,7 @@
 #include "interface.h"
 #include "model.h"
 #include "pr_dlls.h"
+#include "pr_cmds.h"
 
 #define REHLDS_API_VERSION_MAJOR 3
 #define REHLDS_API_VERSION_MINOR 11
@@ -226,6 +227,10 @@ typedef IVoidHookChainRegistry<edict_t *> IRehldsHookRegistry_ED_Free;
 typedef IHookChain<void, const char *> IRehldsHook_Con_Printf;
 typedef IHookChainRegistry<void, const char *> IRehldsHookRegistry_Con_Printf;
 
+//PF_precache_generic_I hook
+typedef IHookChain<int, const char*> IRehldsHook_PF_precache_generic_I;
+typedef IHookChainRegistry<int, const char*> IRehldsHookRegistry_PF_precache_generic_I;
+
 class IRehldsHookchains {
 public:
 	virtual ~IRehldsHookchains() { }
@@ -277,6 +282,7 @@ public:
 	virtual IRehldsHookRegistry_ED_Alloc* ED_Alloc() = 0;
 	virtual IRehldsHookRegistry_ED_Free* ED_Free() = 0;
 	virtual IRehldsHookRegistry_Con_Printf* Con_Printf() = 0;
+	virtual IRehldsHookRegistry_PF_precache_generic_I* PF_precache_generic_I() = 0;
 };
 
 struct RehldsFuncs_t {

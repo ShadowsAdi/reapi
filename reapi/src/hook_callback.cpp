@@ -73,6 +73,16 @@ void Con_Printf(IRehldsHook_Con_Printf *chain, const char *string)
 	callVoidForward(RH_Con_Printf, original, string);
 }
 
+int PF_precache_generic_I(IRehldsHook_PF_precache_generic_I *chain, char *s)
+{
+	auto original = [chain](char *_s)
+	{
+		return chain->callNext(_s);
+	};
+
+	return callForward<int>(RH_Precache_Generic, original, s);
+}
+
 ENTITYINIT GetEntityInit(IRehldsHook_GetEntityInit *chain, char *classname)
 {
 	auto original = [chain](char *_classname)

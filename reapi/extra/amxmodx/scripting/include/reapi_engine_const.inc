@@ -95,6 +95,12 @@ enum EngineFunc
 	* Params:       (const string[])
 	*/
 	RH_Con_Printf,
+	
+	/*
+	* Description:  -
+	* Params:       (const string[])
+	*/
+	RH_Precache_Generic,
 };
 
 /**
