@@ -34,7 +34,6 @@
 #include "interface.h"
 #include "model.h"
 #include "pr_dlls.h"
-#include "pr_cmds.h"
 
 #define REHLDS_API_VERSION_MAJOR 3
 #define REHLDS_API_VERSION_MINOR 11
