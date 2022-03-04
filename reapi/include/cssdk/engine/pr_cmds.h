@@ -172,5 +172,3 @@ void QueryClientCvarValue(const edict_t *player, const char *cvarName);
 void QueryClientCvarValue2(const edict_t *player, const char *cvarName, int requestID);
 int hudCheckParm(char *parm, char **ppnext);
 int EngCheckParm(const char *pchCmdLineToken, char **pchNextVal);
-
-#define RH_Precache_Generic PF_precache_generic_I

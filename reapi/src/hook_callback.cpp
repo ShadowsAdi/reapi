@@ -80,7 +80,7 @@ int PF_precache_generic_I(IRehldsHook_PF_precache_generic_I *chain, char *s)
 		return chain->callNext(_s);
 	};
 
-	return callForward<int>(RH_Precache_Generic, original, s);
+	return callForward<int>(RH_PF_precache_generic_I, original, s);
 }
 
 ENTITYINIT GetEntityInit(IRehldsHook_GetEntityInit *chain, char *classname)

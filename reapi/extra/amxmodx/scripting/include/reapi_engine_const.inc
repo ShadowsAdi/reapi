@@ -108,7 +108,7 @@ enum EngineFunc
 	* Description:  -
 	* Params:       (const string[])
 	*/
-	RH_Precache_Generic,
+	RH_PF_precache_generic_I,
 };
 
 /**
