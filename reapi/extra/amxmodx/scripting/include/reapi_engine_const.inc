@@ -155,6 +155,8 @@ enum EngineFunc
 	* Params:       (ResourceType_t:type, const filename[], size, flags, index)
 	*/
 	RH_SV_AddResource,
+	
+	RH_SV_ClientPrintf,
 };
 
 /**
