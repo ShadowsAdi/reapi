@@ -210,6 +210,26 @@ void SV_ClientPrintf(IRehldsHook_SV_ClientPrintf *chain, const char *string)
 	callVoidForward(RH_SV_ClientPrintf, original, string);
 }
 
+void Host_Error(IRehldsHook_Host_Error *chain, const char *error)
+{
+	auto original = [chain](const char *_error)
+	{
+		chain->callNext(_error);
+	};
+
+	callVoidForward(RH_Host_Error, original, error);
+}
+
+void Sys_Error(IRehldsHook_Sys_Error *chain, const char *error)
+{
+	auto original = [chain](const char *_error)
+	{
+		chain->callNext(_error);
+	};
+
+	callVoidForward(RH_Sys_Error, original, error);
+}
+
 /*
 * ReGameDLL functions
 */

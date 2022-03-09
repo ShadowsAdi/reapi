@@ -157,6 +157,10 @@ enum EngineFunc
 	RH_SV_AddResource,
 	
 	RH_SV_ClientPrintf,
+	
+	RH_Host_Error,
+	
+	RH_Sys_Error,
 };
 
 /**
