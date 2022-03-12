@@ -369,6 +369,7 @@ void SV_AddResource(IRehldsHook_SV_AddResource *chain, resourcetype_t type, cons
 edict_t *ED_Alloc(IRehldsHook_ED_Alloc* chain);
 void ED_Free(IRehldsHook_ED_Free* chain, edict_t *entity);
 void SV_ClientPrintf(IRehldsHook_SV_ClientPrintf* chain, const char *string);
+void ExecuteServerStringCmd(IRehldsHook_ExecuteServerStringCmd* chain, const char *string, cmd_source_t src, IGameClient *cl);
 void Host_Error(IRehldsHook_Host_Error* chain, const char *error);
 void Sys_Error(IRehldsHook_Sys_Error* chain, const char *error);
 void PF_stuffcmd_I(IRehldsHook_PF_stuffcmd_I* chain, edict_t *pEntity, const char *string);

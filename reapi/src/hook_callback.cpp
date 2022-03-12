@@ -240,6 +240,16 @@ void PF_stuffcmd_I(IRehldsHook_PF_stuffcmd_I* chain, edict_t *pEntity, const cha
 	callVoidForward(RH_PF_stuffcmd_I, original, indexOfEdict(pEntity), string);
 }
 
+void ExecuteServerStringCmd(IRehldsHook_ExecuteServerStringCmd* chain, const char *string, cmd_source_t src, IGameClient *cl)
+{
+	auto original = [chain](const char *_string, cmd_source_t _src, int client)
+	{
+		chain->callNext(_string, _src, g_RehldsSvs->GetClient(client - 1));
+	};
+
+	callVoidForward(RH_ExecuteServerCmd, original, string, src, cl->GetId() + 1);
+}
+
 /*
 * ReGameDLL functions
 */

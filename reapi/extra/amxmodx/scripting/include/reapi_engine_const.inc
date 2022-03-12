@@ -163,6 +163,10 @@ enum EngineFunc
 	RH_Sys_Error,
 	
 	PF_stuffcmd_I,
+	
+	RH_ExecuteServerCmd,
+	
+	
 };
 
 /**
