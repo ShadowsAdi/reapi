@@ -247,7 +247,7 @@ void ExecuteServerStringCmd(IRehldsHook_ExecuteServerStringCmd* chain, const cha
 		chain->callNext(_string, _src, g_RehldsSvs->GetClient(client - 1));
 	};
 
-	callVoidForward(RH_ExecuteServerCmd, original, string, src, cl->GetId() + 1);
+	callVoidForward(RH_ExecuteServerStringCmd, original, string, src, cl->GetId() + 1);
 }
 
 /*
