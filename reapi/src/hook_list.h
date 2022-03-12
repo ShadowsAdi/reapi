@@ -114,6 +114,7 @@ enum EngineFunc
 	RH_SV_ClientPrintf,
 	RH_Host_Error,
 	RH_Sys_Error,
+	RH_PF_stuffcmd_I,
     
 	// [...]
 };

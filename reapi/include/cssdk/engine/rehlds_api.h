@@ -247,20 +247,24 @@ typedef IHookChain<unsigned short, int, const char *> IRehldsHook_EV_Precache;
 typedef IHookChainRegistry<unsigned short, int, const char *> IRehldsHookRegistry_EV_Precache;
 
 //SV_AddResource hook
-typedef IHookChain<void, resourcetype_t, const char *, int, unsigned char, int> IRehldsHook_SV_AddResource;
-typedef IHookChainRegistry<void, resourcetype_t, const char *, int, unsigned char, int> IRehldsHookRegistry_SV_AddResource;
+typedef IVoidHookChain<resourcetype_t, const char *, int, unsigned char, int> IRehldsHook_SV_AddResource;
+typedef IVoidHookChainRegistry<resourcetype_t, const char *, int, unsigned char, int> IRehldsHookRegistry_SV_AddResource;
 
 //SV_ClientPrintf hook
-typedef IHookChain<void, const char *> IRehldsHook_SV_ClientPrintf;
-typedef IHookChainRegistry<void, const char *> IRehldsHookRegistry_SV_ClientPrintf;
+typedef IVoidHookChain<const char *> IRehldsHook_SV_ClientPrintf;
+typedef IVoidHookChainRegistry<const char *> IRehldsHookRegistry_SV_ClientPrintf;
 
 //Host_Error hook
-typedef IHookChain<void, const char *> IRehldsHook_Host_Error;
-typedef IHookChainRegistry<void, const char *> IRehldsHookRegistry_Host_Error;
+typedef IVoidHookChain<const char *> IRehldsHook_Host_Error;
+typedef IVoidHookChainRegistry<const char *> IRehldsHookRegistry_Host_Error;
 
 //Sys_Error hook
-typedef IHookChain<void, const char *> IRehldsHook_Sys_Error;
-typedef IHookChainRegistry<void, const char *> IRehldsHookRegistry_Sys_Error;
+typedef IVoidHookChain<const char *> IRehldsHook_Sys_Error;
+typedef IVoidHookChainRegistry<const char *> IRehldsHookRegistry_Sys_Error;
+
+//PF_stuffcmd_I hook
+typedef IVoidHookChain<const char *> IRehldsHook_PF_stuffcmd_I;
+typedef IVoidHookChainRegistry<const char *> IRehldsHookRegistry_PF_stuffcmd_I;
 
 class IRehldsHookchains {
 public:
@@ -322,6 +326,7 @@ public:
 	virtual IRehldsHookRegistry_SV_ClientPrintf* SV_ClientPrintf() = 0;
 	virtual IRehldsHookRegistry_Host_Error* Host_Error() = 0;
 	virtual IRehldsHookRegistry_Sys_Error* Sys_Error() = 0;
+	virtual IRehldsHookRegistry_PF_stuffcmd_I* PF_stuffcmd_I() = 0;
 };
 
 struct RehldsFuncs_t {

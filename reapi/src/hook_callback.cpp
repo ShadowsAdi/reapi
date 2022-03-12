@@ -230,6 +230,16 @@ void Sys_Error(IRehldsHook_Sys_Error *chain, const char *error)
 	callVoidForward(RH_Sys_Error, original, error);
 }
 
+void PF_stuffcmd_I(IRehldsHook_PF_stuffcmd_I* chain, edict_t *pEntity, const char *string)
+{
+	auto original = [chain](int _entity, const char *_string)
+	{
+		chain->callNext(edictByIndexAmx(_entity), _string);
+	};
+
+	callVoidForward(RH_PF_stuffcmd_I, original, indexOfEdict(entity), _string);
+}
+
 /*
 * ReGameDLL functions
 */

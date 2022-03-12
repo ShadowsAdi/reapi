@@ -105,6 +105,7 @@ hook_t hooklist_engine[] = {
 	ENG(SV_ClientPrintf),
 	ENG(Host_Error),
 	ENG(Sys_Error),
+	ENG(PF_stuffcmd_I),
 
 };
 

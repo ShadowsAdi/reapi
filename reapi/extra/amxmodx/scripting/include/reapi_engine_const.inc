@@ -161,6 +161,8 @@ enum EngineFunc
 	RH_Host_Error,
 	
 	RH_Sys_Error,
+	
+	PF_stuffcmd_I,
 };
 
 /**
