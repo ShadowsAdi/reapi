@@ -237,7 +237,7 @@ void PF_stuffcmd_I(IRehldsHook_PF_stuffcmd_I* chain, edict_t *pEntity, const cha
 		chain->callNext(edictByIndexAmx(_entity), _string);
 	};
 
-	callVoidForward(RH_PF_stuffcmd_I, original, indexOfEdict(entity), _string);
+	callVoidForward(RH_PF_stuffcmd_I, original, indexOfEdict(pEntity), string);
 }
 
 /*
