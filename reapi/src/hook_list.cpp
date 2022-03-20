@@ -117,6 +117,7 @@ hook_t hooklist_gamedll[] = {
 	DLL(IsPenetrableEntity),
 	DLL(SpawnHeadGib),
 	DLL(SpawnRandomGibs),
+	DLL(PM_LadderMove),
 };
 
 hook_t hooklist_animating[] = {
@@ -181,8 +182,6 @@ hook_t hooklist_player[] = {
 	DLL(CBasePlayer_Pain),
 	DLL(CBasePlayer_DeathSound),
 	DLL(CBasePlayer_JoiningThink),
-	
-	DLL(PM_LadderMove),
 };
 
 hook_t hooklist_gamerules[] = {
