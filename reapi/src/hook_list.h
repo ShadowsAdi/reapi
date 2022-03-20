@@ -206,6 +206,8 @@ enum GamedllFunc_CBasePlayer
 	RG_CBasePlayer_Pain,
 	RG_CBasePlayer_DeathSound,
 	RG_CBasePlayer_JoiningThink,
+	
+	RG_PM_LadderMove,
 
 	// [...]
 };
