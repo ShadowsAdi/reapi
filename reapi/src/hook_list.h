@@ -134,6 +134,8 @@ enum GamedllFunc
 
 	RG_SpawnHeadGib,
 	RG_SpawnRandomGibs,
+	
+	RG_PM_LadderMove,
 
 	// [...]
 };
@@ -206,8 +208,6 @@ enum GamedllFunc_CBasePlayer
 	RG_CBasePlayer_Pain,
 	RG_CBasePlayer_DeathSound,
 	RG_CBasePlayer_JoiningThink,
-	
-	RG_PM_LadderMove,
 
 	// [...]
 };
