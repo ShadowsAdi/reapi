@@ -39,7 +39,7 @@
 #include <API/CSInterfaces.h>
 
 #define REGAMEDLL_API_VERSION_MAJOR 5
-#define REGAMEDLL_API_VERSION_MINOR 21
+#define REGAMEDLL_API_VERSION_MINOR 22
 
 // CBasePlayer::Spawn hook
 typedef IHookChainClass<void, class CBasePlayer> IReGameHook_CBasePlayer_Spawn;
@@ -461,6 +461,10 @@ typedef IHookChainRegistryClass<int, class CBasePlayerWeapon, int, int, float> I
 typedef IHookChainClass<bool, class CBasePlayerWeapon, int, int, float, float, const char *, const char *> IReGameHook_CBasePlayerWeapon_DefaultShotgunReload;
 typedef IHookChainRegistryClass<bool, class CBasePlayerWeapon, int, int, float, float, const char *, const char *> IReGameHookRegistry_CBasePlayerWeapon_DefaultShotgunReload;
 
+// CBasePlayerWeapon::KickBack hook
+typedef IHookChainClass<void, class CBasePlayerWeapon, float, float, float, float, float, float, int> IReGameHook_CBasePlayerWeapon_KickBack;
+typedef IHookChainRegistryClass<void, class CBasePlayerWeapon, float, float, float, float, float, float, int> IReGameHookRegistry_CBasePlayerWeapon_KickBack;
+
 // CBasePlayer::DropIdlePlayer hook
 typedef IHookChainClass<void, class CBasePlayer, const char *> IReGameHook_CBasePlayer_DropIdlePlayer;
 typedef IHookChainRegistryClass<void, class CBasePlayer, const char *> IReGameHookRegistry_CBasePlayer_DropIdlePlayer;
@@ -654,6 +658,8 @@ public:
 	virtual IReGameHookRegistry_CBasePlayer_Pain *CBasePlayer_Pain() = 0;
 	virtual IReGameHookRegistry_CBasePlayer_DeathSound *CBasePlayer_DeathSound() = 0;
 	virtual IReGameHookRegistry_CBasePlayer_JoiningThink *CBasePlayer_JoiningThink() = 0;
+	
+	virtual IReGameHookRegistry_CBasePlayerWeapon_KickBack *CBasePlayerWeapon_KickBack() = 0;
 };
 
 struct ReGameFuncs_t {
