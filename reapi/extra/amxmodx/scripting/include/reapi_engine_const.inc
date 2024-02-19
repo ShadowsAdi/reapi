@@ -183,6 +183,18 @@ enum EngineFunc
 	* Params:       (const cmd[], source, id)
 	*/
 	RH_ExecuteServerStringCmd,
+	
+	/*
+	* Description:  Called when a message is being sent.
+	* Params:       (msg_dest, msg_dest, const float fOrigin[3], const entity)
+	*/
+	RH_PF_MessageBegin_I,
+	
+	/*
+	* Description:  Called when a message is done sending.
+	* Params:       ()
+	*/
+	RH_PF_MessageEnd_I
 
 };
 

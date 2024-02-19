@@ -108,6 +108,8 @@ hook_t hooklist_engine[] = {
 	ENG(SV_ClientPrintf),
 	ENG(SV_AllowPhysent),
 	ENG(ExecuteServerStringCmd),
+	ENG(PF_MessageBegin_I),
+	ENG(PF_MessageEnd_I),
 
 };
 

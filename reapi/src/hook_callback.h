@@ -385,7 +385,8 @@ edict_t *ED_Alloc(IRehldsHook_ED_Alloc* chain);
 void ED_Free(IRehldsHook_ED_Free* chain, edict_t *entity);
 void SV_ClientPrintf(IRehldsHook_SV_ClientPrintf* chain, const char *string);
 bool SV_AllowPhysent(IRehldsHook_SV_AllowPhysent* chain, edict_t* check, edict_t* sv_player);
-
+void PF_MessageBegin_I(IRehldsHook_PF_MessageBegin_I* chain, int msg_dest, int msg_type, const float *pOrigin, edict_t *ed);
+void PF_MessageEnd_I(IRehldsHook_PF_MessageEnd_I* chain);
 /*
 * ReGameDLL functions
 */
