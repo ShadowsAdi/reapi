@@ -244,14 +244,12 @@ void ExecuteServerStringCmd(IRehldsHook_ExecuteServerStringCmd* chain, const cha
 
 void PF_MessageBegin_I(IRehldsHook_PF_MessageBegin_I* chain, int msg_dest, int msg_type, const float *pOrigin, edict_t *ed)
 {
-	Vector pOriginCopy(pOrigin);
-	
-	auto original = [chain, &pOriginCopy](int _msg_dest, int _msg_type, cell _pOrigin, int _entity)
+	auto original = [chain](int _msg_dest, int _msg_type, const float *_pOrigin, int _entity)
 	{
-		chain->callNext(_msg_dest, _msg_type, pOriginCopy, edictByIndexAmx(_entity));
+		chain->callNext(_msg_dest, _msg_type, _pOrigin, edictByIndexAmx(_entity));
 	};
 
-	callVoidForward(RH_PF_MessageBegin_I, original, msg_dest, msg_type, getAmxVector(pOriginCopy), indexOfEdict(ed));
+	callVoidForward(RH_PF_MessageBegin_I, original, msg_dest, msg_type, getAmxVector(pOrigin), indexOfEdict(ed));
 }
 
 void PF_MessageEnd_I(IRehldsHook_PF_MessageEnd_I *chain)
