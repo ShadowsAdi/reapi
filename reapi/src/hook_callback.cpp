@@ -249,7 +249,7 @@ void PF_MessageBegin_I(IRehldsHook_PF_MessageBegin_I* chain, int msg_dest, int m
 		chain->callNext(_msg_dest, _msg_type, _pOrigin, edictByIndexAmx(_entity));
 	};
 
-	callVoidForward(RH_PF_MessageBegin_I, original, msg_dest, msg_type, pOrigin, indexOfEdict(ed));
+	callVoidForward(RH_PF_MessageBegin_I, original, msg_dest, msg_type, pOrigin, indexOfEdictAmx(ed));
 }
 
 void PF_MessageEnd_I(IRehldsHook_PF_MessageEnd_I *chain)
