@@ -194,53 +194,53 @@ enum EngineFunc
 	* Description:  Called when a message is done sending.
 	* Params:       ()
 	*/
-	RH_PF_MessageEnd_I
+	RH_PF_MessageEnd_I,
 
 	/*
 	* Description:  Called when a byte is being write to message buffer.
-	* Params:       (int iValue)
+	* Params:       (iValue)
 	*/
-	RH_PF_WriteByte_I
+	RH_PF_WriteByte_I,
 
 	/*
 	* Description:  Called when a char is being write to message buffer.
-	* Params:       (int iValue)
+	* Params:       (iValue)
 	*/
-	RH_PF_WriteChar_I
+	RH_PF_WriteChar_I,
 
 	/*
 	* Description:  Called when a short int is being write to message buffer.
-	* Params:       (int iValue)
+	* Params:       (iValue)
 	*/
-	RH_PF_WriteShort_I
+	RH_PF_WriteShort_I,
 
 	/*
 	* Description:  Called when a long int is being write to message buffer.
-	* Params:       (int iValue)
+	* Params:       (iValue)
 	*/
-	RH_PF_WriteLong_I
+	RH_PF_WriteLong_I,
 
 	/*
 	* Description:  Called when an angle is being write to message buffer.
-	* Params:       (float flValue)
+	* Params:       (Float:flValue)
 	*/
-	RH_PF_WriteAngle_I
+	RH_PF_WriteAngle_I,
 
 	/*
 	* Description:  Called when a coord is being write to message buffer.
-	* Params:       (float flValue)
+	* Params:       (Float:flValue)
 	*/
-	RH_PF_WriteCoord_I
+	RH_PF_WriteCoord_I,
 
 	/*
 	* Description:  Called when a string is being write to message buffer.
 	* Params:       (const sz[])
 	*/
-	RH_PF_WriteString_I
+	RH_PF_WriteString_I,
 
 	/*
 	* Description:  Called when an entity is being write to message buffer.
-	* Params:       (int iValue)
+	* Params:       (iValue)
 	*/
 	RH_PF_WriteEntity_I
 
