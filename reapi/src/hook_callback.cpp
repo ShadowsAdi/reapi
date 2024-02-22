@@ -262,6 +262,86 @@ void PF_MessageEnd_I(IRehldsHook_PF_MessageEnd_I *chain)
 	callVoidForward(RH_PF_MessageEnd_I, original);
 }
 
+void PF_WriteByte_I(IRehldsHook_PF_WriteByte_I *chain, int iValue)
+{
+	auto original = [chain](int _value)
+	{
+		chain->callNext(_value);
+	};
+
+	callVoidForward(RH_PF_WriteByte_I, original, iValue);
+}
+
+void PF_WriteChar_I(IRehldsHook_PF_WriteChar_I *chain, int iValue)
+{
+	auto original = [chain](int _value)
+	{
+		chain->callNext(_value);
+	};
+
+	callVoidForward(RH_PF_WriteChar_I, original, iValue);
+}
+
+void PF_WriteShort_I(IRehldsHook_PF_WriteShort_I *chain, int iValue)
+{
+	auto original = [chain](int _value)
+	{
+		chain->callNext(_value);
+	};
+
+	callVoidForward(RH_PF_WriteShort_I, original, iValue);
+}
+
+void PF_WriteLong_I(IRehldsHook_PF_WriteLong_I *chain, int iValue)
+{
+	auto original = [chain](int _value)
+	{
+		chain->callNext(_value);
+	};
+
+	callVoidForward(RH_PF_WriteLong_I, original, iValue);
+}
+
+void PF_WriteAngle_I(IRehldsHook_PF_WriteAngle_I *chain, float flValue)
+{
+	auto original = [chain](float _fvalue)
+	{
+		chain->callNext(_fvalue);
+	};
+
+	callVoidForward(RH_PF_WriteAngle_I, original, flValue);
+}
+
+void PF_WriteCoord_I(IRehldsHook_PF_WriteCoord_I *chain, float flValue)
+{
+	auto original = [chain](float _fvalue)
+	{
+		chain->callNext(_fvalue);
+	};
+
+	callVoidForward(RH_PF_WriteCoord_I, original, flValue);
+}
+
+void PF_WriteString_I(IRehldsHook_PF_WriteString_I *chain, const char * sz)
+{
+	auto original = [chain](const char *_sz)
+	{
+		chain->callNext(_sz);
+	};
+
+	callVoidForward(RH_PF_WriteString_I, original, sz);
+}
+
+void PF_WriteEntity_I(IRehldsHook_PF_WriteEntity_I *chain, int iValue)
+{
+	auto original = [chain](int _value)
+	{
+		chain->callNext(_value);
+	};
+
+	callVoidForward(RH_PF_WriteEntity_I, original, iValue);
+}
+
 /*
 * ReGameDLL functions
 */

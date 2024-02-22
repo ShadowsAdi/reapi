@@ -119,6 +119,14 @@ enum EngineFunc
 	RH_ExecuteServerStringCmd,
 	RH_PF_MessageBegin_I,
 	RH_PF_MessageEnd_I,
+	RH_PF_WriteByte_I,
+	RH_PF_WriteChar_I,
+	RH_PF_WriteShort_I,
+	RH_PF_WriteLong_I,
+	RH_PF_WriteAngle_I,
+	RH_PF_WriteCoord_I,
+	RH_PF_WriteString_I,
+	RH_PF_WriteEntity_I,
 
 	// [...]
 };
