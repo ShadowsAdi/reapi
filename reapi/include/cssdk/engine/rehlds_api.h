@@ -262,7 +262,6 @@ typedef IHookChainRegistry<bool, edict_t*, edict_t*> IRehldsHookRegistry_SV_Allo
 typedef IVoidHookChain<> IRehldsHook_SV_SendResources;
 typedef IVoidHookChainRegistry<> IRehldsHookRegistry_SV_SendResources;
 
-
 class IRehldsHookchains {
 public:
 	virtual ~IRehldsHookchains() { }

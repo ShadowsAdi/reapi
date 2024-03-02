@@ -242,14 +242,14 @@ void ExecuteServerStringCmd(IRehldsHook_ExecuteServerStringCmd* chain, const cha
 	callVoidForward(RH_ExecuteServerStringCmd, original, cmdName, cmdSrc, cmdSrc == src_client ? cl->GetId() + 1 : AMX_NULLENT);
 }
 
-void SV_SendServerinfo(IRehldsHook_SV_SendServerinfo* chain)
+void SV_SendResources(IRehldsHook_SV_SendResources* chain)
 {
 	auto original = [chain]()
 	{
 		chain->callNext();
 	};
 
-	callVoidForward(RH_SV_SendServerinfo, original);
+	callVoidForward(RH_SV_SendResources, original);
 }
 
 /*
