@@ -183,6 +183,8 @@ enum EngineFunc
 	* Params:       (const cmd[], source, id)
 	*/
 	RH_ExecuteServerStringCmd,
+	
+	RH_SV_SendResources,
 
 };
 
