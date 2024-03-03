@@ -259,8 +259,8 @@ typedef IHookChain<bool, edict_t*, edict_t*> IRehldsHook_SV_AllowPhysent;
 typedef IHookChainRegistry<bool, edict_t*, edict_t*> IRehldsHookRegistry_SV_AllowPhysent;
 
 //SV_SendResources hook
-typedef IVoidHookChain<> IRehldsHook_SV_SendResources;
-typedef IVoidHookChainRegistry<> IRehldsHookRegistry_SV_SendResources;
+typedef IVoidHookChain<sizebuf_t *> IRehldsHook_SV_SendResources;
+typedef IVoidHookChainRegistry<sizebuf_t *> IRehldsHookRegistry_SV_SendResources;
 
 class IRehldsHookchains {
 public:
