@@ -244,12 +244,12 @@ void ExecuteServerStringCmd(IRehldsHook_ExecuteServerStringCmd* chain, const cha
 
 void SV_SendResources(IRehldsHook_SV_SendResources* chain, sizebuf_t *msg)
 {
-	auto original = [chain]()
+	auto original = [chain](sizebuf_t *_msg)
 	{
-		chain->callNext();
+		chain->callNext(_msg);
 	};
 
-	callVoidForward(RH_SV_SendResources, original);
+	callVoidForward(RH_SV_SendResources, original, msg);
 }
 
 /*
