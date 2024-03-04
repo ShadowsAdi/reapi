@@ -246,7 +246,7 @@ qboolean Steam_NotifyClientConnect(IRehldsHook_Steam_NotifyClientConnect *chain,
 {
 	auto original = [chain](IGameClient* _cl, const void* _pvSteam2Key, unsigned int _ucbSteam2Key)
 	{
-		return chain->callNext(clientByIndex(_cl)', _pvSteam2Key, _ucbSteam2Key);
+		return chain->callNext(clientByIndex(_cl), _pvSteam2Key, _ucbSteam2Key);
 	};
 
 	return callForward<int>(RH_Steam_NotifyClientConnect, original, cl->GetId() + 1, pvSteam2Key, ucbSteam2Key);
