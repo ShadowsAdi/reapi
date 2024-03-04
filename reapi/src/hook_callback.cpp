@@ -244,7 +244,7 @@ void ExecuteServerStringCmd(IRehldsHook_ExecuteServerStringCmd* chain, const cha
 
 qboolean Steam_NotifyClientConnect(IRehldsHook_Steam_NotifyClientConnect *chain, IGameClient* cl, const void* pvSteam2Key, unsigned int ucbSteam2Key)
 {
-	auto original = [chain](IGameClient* _cl, const void* _pvSteam2Key, unsigned int _ucbSteam2Key)
+	auto original = [chain](int _cl, const void* _pvSteam2Key, unsigned int _ucbSteam2Key)
 	{
 		return chain->callNext(clientByIndex(_cl), _pvSteam2Key, _ucbSteam2Key);
 	};
