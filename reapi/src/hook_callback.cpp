@@ -242,6 +242,16 @@ void ExecuteServerStringCmd(IRehldsHook_ExecuteServerStringCmd* chain, const cha
 	callVoidForward(RH_ExecuteServerStringCmd, original, cmdName, cmdSrc, cmdSrc == src_client ? cl->GetId() + 1 : AMX_NULLENT);
 }
 
+qboolean Steam_NotifyClientConnect(IRehldsHook_Steam_NotifyClientConnect *chain, IGameClient* cl, const void* pvSteam2Key, unsigned int ucbSteam2Key)
+{
+	auto original = [chain](IGameClient* _cl, const void* _pvSteam2Key, unsigned int _ucbSteam2Key)
+	{
+		return chain->callNext(clientByIndex(_cl)', _pvSteam2Key, _ucbSteam2Key);
+	};
+
+	return callForward<int>(RH_PF_Steam_NotifyClientConnect, original, cl->GetId() + 1, pvSteam2Key, ucbSteam2Key);
+}
+
 /*
 * ReGameDLL functions
 */
