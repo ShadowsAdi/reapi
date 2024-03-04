@@ -371,6 +371,8 @@ int PF_precache_generic_I(IRehldsHook_PF_precache_generic_I *chain, const char *
 int PF_precache_model_I(IRehldsHook_PF_precache_model_I *chain, char *s);
 int PF_precache_sound_I(IRehldsHook_PF_precache_sound_I *chain, const char *s);
 
+qboolean Steam_NotifyClientConnect(IRehldsHook_Steam_NotifyClientConnect *chain, IGameClient* cl, const void* pvSteam2Key, unsigned int ucbSteam2Key);
+
 struct EventPrecache_args_t
 {
 	EventPrecache_args_t(int _type) : type(_type) {}
