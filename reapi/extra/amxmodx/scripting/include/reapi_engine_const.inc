@@ -190,6 +190,8 @@ enum EngineFunc
 	* Params:       (const client)
 	*/
 	RH_SV_SendResources,
+	
+	RH_SV_CheckConnectionLessRateLimits,
 
 };
 
