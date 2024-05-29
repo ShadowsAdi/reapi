@@ -258,6 +258,16 @@ void SV_SendResources(IRehldsHook_SV_SendResources *chain, sizebuf_t *msg)
 	SV_SendResources_AMXX(&data, g_RehldsFuncs->GetHostClient());
 }
 
+bool SV_CheckConnectionLessRateLimits(IRehldsHook_SV_CheckConnectionLessRateLimits *chain, netadr_t &net_from, const uint8_t *data, int size)
+{
+	auto original = [chain](netadr_t &_net_from, uint8_t *_data, int _size)
+	{
+		return chain->callNext(_net_from, _data, _size);
+	};
+
+	return callForward<bool>(RH_SV_CheckConnectionLessRateLimits, original, net_from, data, size);
+}
+
 /*
 * ReGameDLL functions
 */
