@@ -59,10 +59,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3.6.0
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build --if-present
+          
       - name: Build using Intel C++ Compiler 19.0
         run: |
           rm -rf build && CC=icc CXX=icpc cmake -B build && cmake --build build -j8
