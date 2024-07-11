@@ -341,6 +341,8 @@ void SV_ConnectClient(IRehldsHook_SV_ConnectClient* chain);
 BOOL SV_CheckUserInfo(IRehldsHook_SV_CheckUserInfo *chain, netadr_t *adr, char *userinfo, qboolean bIsReconnecting, int iReconnectSlot, char *name);
 BOOL SV_CheckUserInfo_AMXX(IRehldsHook_SV_CheckUserInfo *chain, netadr_t *adr, size_t userinfo, qboolean bIsReconnecting, int iReconnectSlot, char *name);
 
+bool SV_CheckConnectionLessRateLimits(IRehldsHook_SV_CheckConnectionLessRateLimits *chain, netadr_t &net_from, const uint8_t *data, int size);
+
 struct SV_WriteFullClientUpdate_args_t
 {
 	SV_WriteFullClientUpdate_args_t(sizebuf_t *msg, int size) : message(msg), maxlen(size) {}
